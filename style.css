@@ -33,7 +33,6 @@ body {
 .main {
   display: none;
   width: 100%;
-
 }
 
 .container {
@@ -41,7 +40,6 @@ body {
   flex-direction: column;
   min-height: 100vh;
   padding: 0 4rem;
-
 }
 
 .opening {
@@ -58,6 +56,10 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 20px;
+}
+
+.page-top i {
+  cursor: pointer;
 }
 
 .page-cover {
@@ -81,6 +83,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .restrictive {
@@ -113,10 +116,14 @@ body {
   right: 0;
   width: 100%;
   background: var(--bg-color);
-  -moz-animation: showHide 3s ease-in alternate infinite; /* Firefox */
-  -webkit-animation: showHide 3s ease-in alternate infinite; /* Safari and Chrome */
-  -ms-animation: showHide 3s ease-in alternate infinite; /* IE10 */
-  -o-animation: showHide 3s ease-in alternate infinite; /* Opera */
+  -moz-animation: showHide 3s ease-in alternate infinite;
+  /* Firefox */
+  -webkit-animation: showHide 3s ease-in alternate infinite;
+  /* Safari and Chrome */
+  -ms-animation: showHide 3s ease-in alternate infinite;
+  /* IE10 */
+  -o-animation: showHide 3s ease-in alternate infinite;
+  /* Opera */
   animation: showHide 2s ease-in alternate infinite;
 }
 
@@ -132,20 +139,25 @@ body {
   0% {
     width: 100%;
   }
+
   40% {
     width: 0%;
   }
+
   60% {
     width: 0%;
   }
+
   100% {
     width: 100%;
   }
 }
+
 @keyframes fadeInDown {
   from {
     top: 0px;
   }
+
   to {
     top: 20px;
   }
