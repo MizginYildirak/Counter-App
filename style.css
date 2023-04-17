@@ -1,0 +1,81 @@
+:root {
+  --bg-color: #141516;
+  --main-color: #ced4e2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+  touch-action: manipulation;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.opening {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  color: var(--main-color);
+}
+
+.fadeInRight {
+  position: relative;
+  line-height: 2em;
+  overflow: hidden;
+  /* for demo purpose */
+  width: 300px;
+  margin: 0 auto;
+}
+
+.fadingEffect {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: var(--bg-color);
+  -moz-animation: showHide 3s ease-in alternate infinite; /* Firefox */
+  -webkit-animation: showHide 3s ease-in alternate infinite; /* Safari and Chrome */
+  -ms-animation: showHide 3s ease-in alternate infinite; /* IE10 */
+  -o-animation: showHide 3s ease-in alternate infinite; /* Opera */
+  animation: showHide 2s ease-in alternate infinite;
+}
+
+.fadeInDown {
+  position: relative;
+  animation: fadeInDown 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showHide {
+  0% {
+    width: 100%;
+  }
+  40% {
+    width: 0%;
+  }
+  60% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes fadeInDown {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 20px;
+  }
+}
