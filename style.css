@@ -3,6 +3,12 @@
 :root {
   --bg-color: #141516;
   --main-color: #ced4e2;
+  --color-blue: #004291;
+  --color-pink: #ed1e78;
+  --color-gray: #607d8b;
+  --color-purple: #a701a6;
+  --color-green: #01ad98;
+  --color-yellow: #ffac04; 
 }
 
 * {
@@ -57,12 +63,66 @@ body {
 
 .set-count, .limits, .theme-btn {
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
   width: 300px;
   border: 1px solid var(--main-color);
   border-radius: 10px;
 }
 
+.limits {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.theme-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: center;
+  padding: 30px;
+  width: 300px;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+}
+
+.theme-btn button {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* button colors */
+
+.black-btn {
+  background-color: var(--bg-color);
+}
+
+.white-btn {
+  background-color: var(--main-color);
+}
+
+.blue-btn {
+  background-color: var(--color-blue);
+}
+.pink-btn {
+  background-color: var(--color-pink);
+}
+.gray-btn {
+  background-color: var(--color-gray);
+}
+.purple-btn {
+  background-color: var(--color-purple);
+}
+.green-btn {
+  background-color: var(--color-green);
+}
+.yellow-btn {
+  background-color: var(--color-yellow);
+}
 
 
 .resetCounter-inner {
