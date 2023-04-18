@@ -30,6 +30,44 @@ body {
   color: var(--main-color);
 }
 
+.reset-hidden {
+  display: none;
+}
+
+.resetCounter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-color);
+  opacity: 0.9;
+}
+
+.resetCounter-inner {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.resetCounter-inner button {
+  height: 40px;
+  width: 100px;
+  padding: 10px 10px !important;
+  font-size: larger;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: var(--main-color);
+}
+
+
 .main {
   display: none;
   width: 100%;
@@ -50,12 +88,13 @@ body {
 }
 
 .page-top {
-  flex: 2;
+  flex: 1;
   display: flex;
   gap: 2rem;
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  z-index: 1;
 }
 
 .page-top i {
@@ -67,7 +106,7 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  flex: 5;
+  flex: 1;
 }
 
 .counter {
@@ -92,7 +131,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex: 3;
+  flex: 1;
   letter-spacing: 3px;
 }
 
