@@ -43,6 +43,7 @@ function closeScreen() {
   document.querySelector(".reset-hidden").style.display = "none";
   count = 0;
   counter.innerHTML = count;
+  checkBtn();
 }
 
 function cancelScreen() {

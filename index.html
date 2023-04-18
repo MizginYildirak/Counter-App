@@ -44,11 +44,40 @@
       </div>
     </div>
 
+    <div class="settings-hidden">
+      <div class="settings active">
+        <div><h2>Settings</h2></div>
+        <div>
+          <h3>Set Count =</h3>
+          <input type="number" />
+        </div>
+        <div>
+          <h3>Limits <span>Off</span>/<span>On</span></h3>
+          <button>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div>
+          <h3>Maximum =</h3>
+          <input type="number" />
+        </div>
+        <div>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+      </div>
+    </div>
+
     <main class="main">
       <div class="container">
         <div class="page-top">
           <i class="fa-solid fa-circle-info info"></i>
-          <i class="fa-solid fa-gear"></i>
+          <i class="fa-solid fa-gear" onclick="toggleMenu(this)"></i>
           <i
             class="fa-solid fa-rotate-right reset"
             onclick="toggleMenu(this)"

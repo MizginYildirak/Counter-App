@@ -30,11 +30,13 @@ body {
   color: var(--main-color);
 }
 
-.reset-hidden {
+.reset-hidden,
+.settings-hidden {
   display: none;
 }
 
-.resetCounter {
+.resetCounter,
+.settings {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +68,6 @@ body {
   border: none;
   color: var(--main-color);
 }
-
 
 .main {
   display: none;
