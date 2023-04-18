@@ -49,6 +49,22 @@ body {
   opacity: 0.9;
 }
 
+.settings-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.set-count, .limits, .theme-btn {
+  text-align: center;
+  padding: 20px 0;
+  width: 300px;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+}
+
+
+
 .resetCounter-inner {
   display: flex;
   align-items: center;

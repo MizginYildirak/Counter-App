@@ -39,6 +39,13 @@ function toggleMenu(e) {
   document.querySelector(".reset-hidden").style.display = "block";
 }
 
+
+function toggleMenuSection(e) {
+  e.classList.toggle("styles-active");
+  document.querySelector(".settings").classList.toggle("styles-active");
+  document.querySelector(".settings-hidden").style.display = "block";
+}
+
 function closeScreen() {
   document.querySelector(".reset-hidden").style.display = "none";
   count = 0;
@@ -46,6 +53,10 @@ function closeScreen() {
   checkBtn();
 }
 
+
 function cancelScreen() {
   document.querySelector(".reset-hidden").style.display = "none";
 }
+
+
+
