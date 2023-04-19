@@ -90,6 +90,11 @@ body {
   gap: 15px;
 }
 
+.disabledbutton {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
 .switch-toggle {
 	position: relative;
 	display: inline-block;

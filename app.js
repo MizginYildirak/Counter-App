@@ -4,9 +4,13 @@ let counter = document.querySelector(".counter");
 let increment = document.querySelector(".increment");
 let decrement = document.querySelector(".decrement");
 let reset = document.querySelector(".reset");
-let limitsOn = document.querySelector(".switch-toggle");
+let toggleSwitch = document.querySelector(".switch-toggle");
+let maximum = document.querySelector(".maximum");
+let availableNumber = document.querySelector(".available-number")
 
+console.log(availableNumber)
 let count = 0;
+let currentNumber = 0;
 checkBtn();
 
 // Opening Page
@@ -24,17 +28,39 @@ function checkBtn() {
   }
 }
 
+maximum.addEventListener("change", function (event) {
+  currentNumber = event.target.value;
+  availableNumber.innerHTML = currentNumber;
+  currentNumber.style.color = "white";
+})
+
 increment.addEventListener("click", function () {
+
   count += 1;
+
   counter.innerHTML = count;
   checkBtn();
+  currentNumber--
+  availableNumber.innerHTML = currentNumber;
+
+  if (currentNumber < 0) {
+    availableNumber.style.color = "red"
+  }
 });
+
 
 decrement.addEventListener("click", function () {
   count -= 1;
   counter.innerHTML = count;
   checkBtn();
+  currentNumber++;
+  availableNumber.innerHTML = currentNumber;
+
+  if (currentNumber == 0) {
+    availableNumber.style.color = "white";
+  }
 });
+
 
 function toggleMenu(e) {
   setVisibilityOfPageTop()
@@ -51,9 +77,7 @@ function toggleMenuSection(e) {
   document.querySelector(".settings-hidden").style.display = "block";
 }
 
-limitsOn.addEventListener("click", function() {
-  document.querySelector(".maximum").disabled = true;
-})
+
 
 function closeScreen() {
   document.querySelector(".reset-hidden").style.display = "none";

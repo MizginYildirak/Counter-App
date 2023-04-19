@@ -1,110 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Style link -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./style.css" />
+  <!-- Style link -->
 
-    <!-- Bootstrap link -->
+  <link rel="stylesheet" href="./style.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <!-- FontAwesome link -->
 
-    <title>Counter-App</title>
-  </head>
-  <body>
-    <div class="opening">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Counter-App</title>
+</head>
+
+<body>
+  <div class="opening">
+    <div>
+      <h1 class="fadeInRight">
+        Simple Counter
+        <div class="fadingEffect"></div>
+      </h1>
+    </div>
+    <h2 class="fadeInDown">
+      A single tool for counting things and keeping truck of numbers.
+    </h2>
+  </div>
+
+  <div class="reset-hidden">
+    <div class="resetCounter active">
+      <div class="resetCounter-inner">
+        <h2>Reset Counter?</h2>
+        <button class="approve-btn" onclick="closeScreen()">Yes</button>
+        <button class="cancel-btn" onclick="cancelScreen()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="settings-hidden">
+    <div class="settings settings-inner styles-active">
       <div>
-        <h1 class="fadeInRight">
-          Simple Counter
-          <div class="fadingEffect"></div>
-        </h1>
+        <h2>Settings</h2>
       </div>
-      <h2 class="fadeInDown">
-        A single tool for counting things and keeping truck of numbers.
-      </h2>
-    </div>
+      <div class="set-count">
+        <h3>Set Count = <input class="set-limit" type="number" id="set-limit" min="0" max="9999" /></h3>
 
-    <div class="reset-hidden">
-      <div class="resetCounter active">
-        <div class="resetCounter-inner">
-          <h2>Reset Counter?</h2>
-          <button class="approve-btn" onclick="closeScreen()">Yes</button>
-          <button class="cancel-btn" onclick="cancelScreen()">Cancel</button>
-        </div>
       </div>
-    </div>
-
-    <div class="settings-hidden">
-      <div class="settings settings-inner styles-active">
-        <div><h2>Settings</h2></div>
-        <div class="set-count">
-          <h3>Set Count =   <input class="set-limit"type="number" id="set-limit" min="0" max="9999"/></h3>
-        
-        </div>
-        <div class="limits">
-          <div class="limits-check"><h3>Limits <span class="limits-off">Off</span>/<span class="limits-on">On </span>
+      <div class="limits">
+        <div class="limits-check">
+          <h3>Limits <span class="limits-off">Off</span>/<span class="limits-on">On </span>
           </h3><label class="switch-toggle inner">
             <input type="checkbox" />
             <div></div>
           </label>
-          </div>
-          <div class="maximum">
-            <h3>Maximum = <input type="number" class="set-limit"
-              id="set-limit" min="1" max="9999"/></h3>
-          </div>
         </div>
-
-        <div class="theme-btn">
-          <button class="black-btn" onclick="handleThemeBtn()"></button>
-          <button class="white-btn" onclick="handleThemeBtn()"></button>
-          <button class="blue-btn" onclick="handleThemeBtn()"></button>
-          <button class="pink-btn" onclick="handleThemeBtn()"></button>
-          <button class="gray-btn" onclick="handleThemeBtn()"></button>
-          <button class="purple-btn" onclick="handleThemeBtn()"></button>
-          <button class="green-btn" onclick="handleThemeBtn()"></button>
-          <button class="yellow-btn" onclick="handleThemeBtn()"></button>
+        <div>
+          <h3>Maximum = <input class="maximum" type="number" class="set-limit" id="set-limit" min="1" max="9999" /></h3>
         </div>
+      </div>
 
-        <i class="fa-solid fa-square-xmark close-btn" onclick="cancelScreen()"></i>
+      <div class="theme-btn">
+        <button class="black-btn" onclick="handleThemeBtn()"></button>
+        <button class="white-btn" onclick="handleThemeBtn()"></button>
+        <button class="blue-btn" onclick="handleThemeBtn()"></button>
+        <button class="pink-btn" onclick="handleThemeBtn()"></button>
+        <button class="gray-btn" onclick="handleThemeBtn()"></button>
+        <button class="purple-btn" onclick="handleThemeBtn()"></button>
+        <button class="green-btn" onclick="handleThemeBtn()"></button>
+        <button class="yellow-btn" onclick="handleThemeBtn()"></button>
+      </div>
+
+      <i class="fa-solid fa-square-xmark close-btn" onclick="cancelScreen()"></i>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <div class="page-top">
+        <i class="fa-solid fa-circle-info info"></i>
+        <i class="fa-solid fa-gear" onclick="toggleMenuSection(this)"></i>
+        <i class="fa-solid fa-rotate-right reset" onclick="toggleMenu(this)"></i>
+      </div>
+      <div class="page-cover">
+        <div class="symbol decrement">
+          <i class="fa-sharp fa-solid fa-minus"></i>
+        </div>
+        <div class="counter">0</div>
+        <div class="symbol increment">
+          <i class="fa-sharp fa-solid fa-plus"></i>
+        </div>
+      </div>
+      <div class="restrictive">
+        <div class="available-number">0</div>
+        <div class="available">AVAILABLE</div>
       </div>
     </div>
+  </main>
 
-    <main class="main">
-      <div class="container">
-        <div class="page-top">
-          <i class="fa-solid fa-circle-info info"></i>
-          <i class="fa-solid fa-gear" onclick="toggleMenuSection(this)"></i>
-          <i
-            class="fa-solid fa-rotate-right reset"
-            onclick="toggleMenu(this)"
-          ></i>
-        </div>
-        <div class="page-cover">
-          <div class="symbol decrement">
-            <i class="fa-sharp fa-solid fa-minus"></i>
-          </div>
-          <div class="counter">0</div>
-          <div class="symbol increment">
-            <i class="fa-sharp fa-solid fa-plus"></i>
-          </div>
-        </div>
-        <div class="restrictive">
-          <div>0</div>
-          <div>AVAILABLE</div>
-        </div>
-      </div>
-    </main>
+  <script src="./app.js"></script>
+</body>
 
-    <script src="./app.js"></script>
-  </body>
 </html>
