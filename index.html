@@ -38,8 +38,8 @@
       <div class="resetCounter active">
         <div class="resetCounter-inner">
           <h2>Reset Counter?</h2>
-          <button onclick="closeScreen()">Yes</button>
-          <button onclick="cancelScreen()">Cancel</button>
+          <button class="approve-btn" onclick="closeScreen()">Yes</button>
+          <button class="cancel-btn" onclick="cancelScreen()">Cancel</button>
         </div>
       </div>
     </div>
@@ -52,25 +52,29 @@
         
         </div>
         <div class="limits">
-          <h3>Limits <span>Off</span>/<span>On</span> <button>
-            <span></span>
-            <span></span>
-          </button></h3>
+          <div class="limits-check"><h3>Limits <span>Off</span>/<span>On </span>
+          </h3><label class="switch-toggle inner">
+            <input type="checkbox" />
+            <div></div>
+          </label>
+          </div>
           <div>
             <h3>Maximum = <input type="number" id="set-limit" min="1" max="9999"/></h3>
           </div>
         </div>
 
         <div class="theme-btn">
-          <button class="black-btn"></button>
-          <button class="white-btn"></button>
-          <button class="blue-btn"></button>
-          <button class="pink-btn"></button>
-          <button class="gray-btn"></button>
-          <button class="purple-btn"></button>
-          <button class="green-btn"></button>
-          <button class="yellow-btn"></button>
+          <button class="black-btn" onclick="handleThemeBtn()"></button>
+          <button class="white-btn" onclick="handleThemeBtn()"></button>
+          <button class="blue-btn" onclick="handleThemeBtn()"></button>
+          <button class="pink-btn" onclick="handleThemeBtn()"></button>
+          <button class="gray-btn" onclick="handleThemeBtn()"></button>
+          <button class="purple-btn" onclick="handleThemeBtn()"></button>
+          <button class="green-btn" onclick="handleThemeBtn()"></button>
+          <button class="yellow-btn" onclick="handleThemeBtn()"></button>
         </div>
+
+        <i class="fa-solid fa-square-xmark close-btn" onclick="cancelScreen()"></i>
       </div>
     </div>
 
