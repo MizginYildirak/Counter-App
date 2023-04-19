@@ -4,6 +4,7 @@ let counter = document.querySelector(".counter");
 let increment = document.querySelector(".increment");
 let decrement = document.querySelector(".decrement");
 let reset = document.querySelector(".reset");
+let limitsOn = document.querySelector(".switch-toggle");
 
 let count = 0;
 checkBtn();
@@ -49,6 +50,10 @@ function toggleMenuSection(e) {
   document.querySelector(".settings").classList.toggle("styles-active");
   document.querySelector(".settings-hidden").style.display = "block";
 }
+
+limitsOn.addEventListener("click", function() {
+  document.querySelector(".maximum").disabled = true;
+})
 
 function closeScreen() {
   document.querySelector(".reset-hidden").style.display = "none";
