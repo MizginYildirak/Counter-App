@@ -36,6 +36,14 @@ body {
   color: var(--main-color);
 }
 
+.set-limit {
+  height: 30px;
+  width: 60px;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px;
+}
+
 .reset-hidden,
 .settings-hidden {
   display: none;
