@@ -99,22 +99,43 @@ function setVisibilityOfPageTop() {
 
 // Color change
 
+function handleStyleColorChange() {
+  if (event.target.matches('.white-btn')) {
+    document.body.style.color = "#141516"
+    document.querySelector(".symbol").style.borderColor = "#141516";
+
+  } else {
+    document.body.style.color = "#ced4e2"
+    document.querySelector(".symbol").style.borderColor = "#ced4e2";
+  }
+}
+
 function handleThemeBtn() {
   if (event.target.matches('.black-btn')) {
     document.body.style.backgroundColor = "#141516"
+    handleStyleColorChange()
   } else if (event.target.matches('.white-btn')) {
     document.body.style.backgroundColor = "#ced4e2"
+    handleStyleColorChange()
+    document.querySelector(".settings-inner").style.color = "#ced4e2"
+    document.querySelector(".reset-hidden").style.color = "#ced4e2"
   } else if (event.target.matches('.blue-btn')) {
+    handleStyleColorChange()
     document.body.style.backgroundColor = "#004291"
   } else if (event.target.matches('.pink-btn')) {
+    handleStyleColorChange()
     document.body.style.backgroundColor = "#ed1e78"
   } else if (event.target.matches('.gray-btn')) {
+    handleStyleColorChange()
     document.body.style.backgroundColor = "#607d8b"
   } else if (event.target.matches('.purple-btn')) {
+    handleStyleColorChange()
     document.body.style.backgroundColor = "#a701a6"
   } else if (event.target.matches('.green-btn')) {
+    handleStyleColorChange()
     document.body.style.backgroundColor = "#01ad98"
   } else if (event.target.matches('.yellow-btn')) {
+    handleStyleColorChange()
     document.body.style.backgroundColor = "#ffac04"
   }
 }
