@@ -79,6 +79,12 @@ function toggleMenuSection(e) {
 
 
 
+function toggleSwitchInput() {
+
+  document.querySelector(".switch-toggle").classList.toggle(".maximum")
+} 
+
+
 function closeScreen() {
   document.querySelector(".reset-hidden").style.display = "none";
   count = 0;
@@ -99,15 +105,20 @@ function setVisibilityOfPageTop() {
 
 // Color change
 
+function changeStyle(color) {
+  document.querySelectorAll(".symbol").forEach((item) => {
+       item.style.borderColor = color;
+   });
+}
+
 function handleStyleColorChange() {
   if (event.target.matches('.white-btn')) {
-    document.body.style.color = "#141516"
-    document.querySelector(".symbol").style.borderColor = "#141516";
-
-  } else {
-    document.body.style.color = "#ced4e2"
-    document.querySelector(".symbol").style.borderColor = "#ced4e2";
-  }
+     document.body.style.color = "#141516"
+     changeStyle("#141516");
+   } else {
+     document.body.style.color = "#ced4e2"
+     changeStyle("#ced4e2");
+   }
 }
 
 function handleThemeBtn() {
