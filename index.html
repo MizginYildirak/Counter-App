@@ -54,12 +54,13 @@
       <div class="limits">
         <div class="limits-check">
           <h3>Limits <span class="limits-off">Off</span>/<span class="limits-on">On </span>
-          </h3><label class="switch-toggle inner" onclick="toggleSwitchInput()">
-            <input type="checkbox" />
+          </h3><label class="switch-toggle inner" 
+          onclick="toggleSwitchInput()">
+            <input type="checkbox" id="toggleBtn" value="OFF" />
             <div></div>
           </label>
         </div>
-        <div>
+        <div id="maximum-inner">
           <h3>Maximum = <input class="maximum set-limit" type="number" id="set-limit" min="1" max="9999" /></h3>
         </div>
       </div>

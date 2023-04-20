@@ -78,11 +78,21 @@ function toggleMenuSection(e) {
 }
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  var checkbox = document.querySelector('.switch-toggle input[type="checkbox"]');
 
-function toggleSwitchInput() {
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      // do this
+      document.getElementById("maximus-inner").enabled = true;
+    } else {
+      // do that
+      document.getElementById("maximum-inner").style.pointerEvents = "none";
+      document.getElementById("maximum-inner").style.opacity = "0.2";
+    }
+  });
+});
 
-  document.querySelector(".switch-toggle").classList.toggle(".maximum")
-} 
 
 
 function closeScreen() {
