@@ -215,7 +215,6 @@ for (let i = 0; i < btnBorder.length; i++) {
 }
 
 
-
 // const colorButtons = {
 //   "black-btn": "#141516",
 //   "white-btn": "#ced4e2",
