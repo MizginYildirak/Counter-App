@@ -45,12 +45,15 @@ body {
 }
 
 .reset-hidden,
-.settings-hidden {
+.settings-hidden,
+.info-hidden {
   display: none;
 }
 
 .resetCounter,
-.settings {
+.settings,
+.info
+{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,8 +66,10 @@ body {
   opacity: 0.9;
 }
 
-.settings-inner {
+
+.settings-inner, .info-inner {
   display: flex;
+  text-align: center;
   flex-direction: column;
   gap: 20px;
 }

@@ -67,6 +67,14 @@ decrement.addEventListener("click", function () {
 });
 
 
+function toggleMenuInfoSection(e) {
+  setVisibilityOfPageTop()
+  e.classList.toggle("info-active");
+  document.querySelector(".info").classList.toggle("info-active");
+  document.querySelector(".info-hidden").style.display = "block";
+}
+
+
 function toggleMenu(e) {
   setVisibilityOfPageTop()
   e.classList.toggle("active");
@@ -127,6 +135,7 @@ function cancelScreen() {
 function setVisibilityOfPageTop() {
   document.querySelector(".settings-hidden").style.display = "none";
   document.querySelector(".reset-hidden").style.display = "none";
+  document.querySelector(".info-hidden").style.display = "none";
 }
 
 // Color change
@@ -156,41 +165,52 @@ function handleThemeBtn() {
     document.querySelector('.settings').style.backgroundColor = "#141516"
     document.body.style.backgroundColor = "#141516"
     document.querySelector('.resetCounter').style.backgroundColor = "#141516"
+    document.querySelector('.info').style.backgroundColor = "#141516"
   } else if (event.target.matches('.white-btn')) {
     handleStyleColorChange()
     document.body.style.backgroundColor = "#ced4e2"
     document.querySelector(".settings-inner").style.color = "#141516"
     document.querySelector('.settings').style.backgroundColor = "#ced4e2"
+    document.querySelector('.resetCounter').style.backgroundColor = "#ced4e2"
+    document.querySelector('.resetCounter').style.color = "#141516"
+    document.querySelector('.info').style.backgroundColor = "#141516"
+    
   } else if (event.target.matches('.blue-btn')) {
     handleStyleColorChange()
     document.querySelector('.settings').style.backgroundColor = "#004291"
     document.body.style.backgroundColor = "#004291"
     document.querySelector('.resetCounter').style.backgroundColor = "#004291"
+    document.querySelector('.info').style.backgroundColor = "#004291"
   } else if (event.target.matches('.pink-btn')) {
     handleStyleColorChange()
     document.querySelector('.settings').style.backgroundColor = "#ed1e78"
     document.body.style.backgroundColor = "#ed1e78"
     document.querySelector('.resetCounter').style.backgroundColor = "#ed1e78"
+    document.querySelector('.info').style.backgroundColor = "#ed1e78"
   } else if (event.target.matches('.gray-btn')) {
     handleStyleColorChange()
     document.querySelector('.settings').style.backgroundColor = "#607d8b"
     document.body.style.backgroundColor = "#607d8b"
     document.querySelector('.resetCounter').style.backgroundColor = "#607d8b"
+    document.querySelector('.info').style.backgroundColor = "#607d8b"
   } else if (event.target.matches('.purple-btn')) {
     handleStyleColorChange()
     document.querySelector('.settings').style.backgroundColor = "#a701a6"
     document.body.style.backgroundColor = "#a701a6"
     document.querySelector('.resetCounter').style.backgroundColor = "#a701a6"
+    document.querySelector('.info').style.backgroundColor = "#a701a6"
   } else if (event.target.matches('.green-btn')) {
     handleStyleColorChange()
     document.querySelector('.settings').style.backgroundColor = "#01ad98"
     document.body.style.backgroundColor = "#01ad98"
     document.querySelector('.resetCounter').style.backgroundColor = "#01ad98"
+    document.querySelector('.info').style.backgroundColor = "#01ad98"
   } else if (event.target.matches('.yellow-btn')) {
     handleStyleColorChange()
     document.querySelector('.settings').style.backgroundColor = "#ffac04"
     document.body.style.backgroundColor = "#ffac04"
     document.querySelector('.resetCounter').style.backgroundColor = "#ffac04"
+    document.querySelector('.info').style.backgroundColor = "#ffac04"
   }
 }
 

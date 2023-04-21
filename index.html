@@ -32,15 +32,18 @@
     </h2>
   </div>
 
-  <div class="reset-hidden">
-    <div class="resetCounter active">
-      <div class="resetCounter-inner">
-        <h2>Reset Counter?</h2>
-        <button class="approve-btn" onclick="closeScreen()">Yes</button>
-        <button class="cancel-btn" onclick="cancelScreen()">Cancel</button>
-      </div>
+
+
+  <div class="info-hidden">
+    <div class="info info-inner info-active">
+      <h1>Simple Counter</h1>
+      <h2>A simple tool for counting things and keeping truck of numbers.</h2>
+      <h3>This is a clone website whose credits belong to Henry Egloff.</h3>
+      <i class="fa-solid fa-square-xmark close-btn" onclick="cancelScreen()"></i>
     </div>
   </div>
+
+
 
   <div class="settings-hidden">
     <div class="settings settings-inner styles-active">
@@ -79,10 +82,26 @@
     </div>
   </div>
 
+
+  <div class="reset-hidden">
+    <div class="resetCounter active">
+      <div class="resetCounter-inner">
+        <h2>Reset Counter?</h2>
+        <button class="approve-btn" onclick="closeScreen()">Yes</button>
+        <button class="cancel-btn" onclick="cancelScreen()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
   <main class="main">
     <div class="container">
       <div class="page-top">
-        <i class="fa-solid fa-circle-info info"></i>
+        <i class="fa-solid fa-circle-info info-btn" onclick="toggleMenuInfoSection(this)"></i>
         <i class="fa-solid fa-gear" onclick="toggleMenuSection(this)"></i>
         <i class="fa-solid fa-rotate-right reset" onclick="toggleMenu(this)"></i>
       </div>
