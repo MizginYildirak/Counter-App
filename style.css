@@ -92,6 +92,7 @@ body {
   gap: 15px;
 }
 
+
 .disabledbutton {
   pointer-events: none;
   opacity: 0.4;
@@ -130,10 +131,6 @@ body {
 }
 
 
-.limits-off {
-  pointer-events: none;
-  opacity: 0.4;
-}
 
 
 
@@ -190,6 +187,8 @@ body {
 .yellow-btn {
   background-color: var(--color-yellow);
 }
+
+.btn-border {}
 
 .close-btn {
   font-size: 25px;
@@ -260,7 +259,7 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  flex: 1;
+  flex: 3;
 }
 
 .counter {
@@ -280,6 +279,7 @@ body {
 }
 
 .restrictive {
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -325,6 +325,8 @@ body {
   animation: fadeInDown 1s;
   animation-fill-mode: forwards;
 }
+
+
 
 /* Media Queries */
 
