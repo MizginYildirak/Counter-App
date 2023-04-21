@@ -148,18 +148,15 @@ function handleStyleColorChange() {
 
 function handleThemeBtn() {
   if (event.target.matches('.black-btn')) {
+    handleStyleColorChange()
     document.querySelector('.settings').style.backgroundColor = "#141516"
     document.body.style.backgroundColor = "#141516"
-
-    handleStyleColorChange()
-
+    document.querySelector('.resetCounter').style.backgroundColor = "#141516"
   } else if (event.target.matches('.white-btn')) {
-    document.body.style.backgroundColor = "#ced4e2"
     handleStyleColorChange()
+    document.body.style.backgroundColor = "#ced4e2"
     document.querySelector(".settings-inner").style.color = "#141516"
     document.querySelector('.settings').style.backgroundColor = "#ced4e2"
-
-
   } else if (event.target.matches('.blue-btn')) {
     handleStyleColorChange()
     document.querySelector('.settings').style.backgroundColor = "#004291"
