@@ -1,11 +1,12 @@
 //variables
 
 let counter = document.querySelector(".counter");
-let increment = document.querySelector(".increment");
-let decrement = document.querySelector(".decrement");
-let reset = document.querySelector(".reset");
-let toggleSwitch = document.querySelector(".switch-toggle");
+const increment = document.querySelector(".increment");
+const decrement = document.querySelector(".decrement");
+const reset = document.querySelector(".reset");
+const toggleSwitch = document.querySelector(".switch-toggle");
 let maximum = document.querySelector(".maximum");
+let setLimit = document.querySelector(".set-limit");
 let availableNumber = document.querySelector(".available-number")
 const btnBorder = document.getElementsByClassName("btn-border");
 
@@ -33,6 +34,11 @@ function checkBtn() {
   }
 }
 
+setLimit.addEventListener("change", function(event) {
+  count = Number(event.target.value);
+  counter.innerHTML = count;
+})
+
 maximum.addEventListener("change", function (event) {
   currentNumber = event.target.value;
   availableNumber.innerHTML = currentNumber;
@@ -40,9 +46,7 @@ maximum.addEventListener("change", function (event) {
 })
 
 increment.addEventListener("click", function () {
-
   count += 1;
-
   counter.innerHTML = count;
   checkBtn();
   currentNumber--
