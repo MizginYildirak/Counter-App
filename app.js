@@ -132,10 +132,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-function closeScreen() {
+function resetScreen() {
   document.querySelector(".reset-hidden").style.display = "none";
   count = 0;
   counter.innerHTML = count;
+  setLimit.value = "0";
+  maximum.value = "0";
+  currentNumber = 0;
+  availableNumber.innerHTML = "0";
+  availableText.innerText = "AVAILABLE"
   checkBtn();
 }
 
