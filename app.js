@@ -41,6 +41,10 @@ function handleValueChange() {
   currentNumber = Number(maximum.value) - count;
   availableNumber.innerHTML = currentNumber;
 
+
+}
+
+function handleAvailableText () {
   if (currentNumber <= 0) {
     availableText.innerHTML = "LIMIT REACHED";
   } else {
@@ -50,10 +54,12 @@ function handleValueChange() {
 
 setLimit.addEventListener("change", function(event) {
   handleValueChange()
+  handleAvailableText ()
 })
 
 maximum.addEventListener("change", function (event) {
   handleValueChange()
+  handleAvailableText()
 })
 
 increment.addEventListener("click", function () {
@@ -63,6 +69,7 @@ increment.addEventListener("click", function () {
   currentNumber--
   availableNumber.innerHTML = currentNumber;
   setLimit.value++
+  handleAvailableText()
 });
 
 
@@ -72,6 +79,7 @@ decrement.addEventListener("click", function () {
   checkBtn();
   currentNumber++;
   availableNumber.innerHTML = currentNumber;
+  handleAvailableText()
 });
 
 
