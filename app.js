@@ -6,10 +6,11 @@ const decrement = document.querySelector(".decrement");
 const reset = document.querySelector(".reset");
 const toggleSwitch = document.querySelector(".switch-toggle");
 let maximum = document.querySelector(".maximum");
-let setLimit = document.querySelector(".set-limit");
+let setLimit = document.getElementById("set-limit");
 let availableNumber = document.querySelector(".available-number")
 const btnBorder = document.getElementsByClassName("btn-border");
-
+const setCount = document.querySelector(".set-count");
+const availableText = document.querySelector(".available");
 
 
 console.log(availableNumber)
@@ -34,22 +35,25 @@ function checkBtn() {
   }
 }
 
-function handleCurrentNumber() {
-  currentNumber = +maximum
+function handleValueChange() {
+  count = Number(setLimit.value);
+  counter.innerHTML = count;
+  currentNumber = Number(maximum.value) - count;
+  availableNumber.innerHTML = currentNumber;
+
+  if (currentNumber <= 0) {
+    availableText.innerHTML = "LIMIT REACHED";
+  } else {
+    availableText.innerHTML = "AVAILABLE";
+  }
 }
 
 setLimit.addEventListener("change", function(event) {
-  count = Number(event.target.value);
-  counter.innerHTML = count;
-
+  handleValueChange()
 })
 
-maximum.addEventListener("change", function(event) {
-
- 
-  currentNumber++
-  availableNumber.innerHTML = currentNumber
-  currentNumber.style.color = "white";
+maximum.addEventListener("change", function (event) {
+  handleValueChange()
 })
 
 increment.addEventListener("click", function () {
@@ -67,10 +71,6 @@ decrement.addEventListener("click", function () {
   checkBtn();
   currentNumber++;
   availableNumber.innerHTML = currentNumber;
-
-  if (currentNumber == 0) {
-    availableNumber.style.color = "white";
-  }
 });
 
 
