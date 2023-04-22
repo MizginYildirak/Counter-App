@@ -62,6 +62,7 @@ increment.addEventListener("click", function () {
   checkBtn();
   currentNumber--
   availableNumber.innerHTML = currentNumber;
+  setLimit.value++
 });
 
 
