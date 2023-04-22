@@ -34,14 +34,21 @@ function checkBtn() {
   }
 }
 
+function handleCurrentNumber() {
+  currentNumber = +maximum
+}
+
 setLimit.addEventListener("change", function(event) {
   count = Number(event.target.value);
   counter.innerHTML = count;
+
 })
 
-maximum.addEventListener("change", function (event) {
-  currentNumber = event.target.value;
-  availableNumber.innerHTML = currentNumber;
+maximum.addEventListener("change", function(event) {
+
+ 
+  currentNumber++
+  availableNumber.innerHTML = currentNumber
   currentNumber.style.color = "white";
 })
 
@@ -110,9 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById("maximum-inner").style.pointerEvents = "none";
       document.getElementById("maximum-inner").style.opacity = "0.2";
       document.querySelector(".restrictive").style.visibility = "hidden"
-      currentNumber = 0;
-      availableNumber.innerHTML = currentNumber;
-      availableNumber.style.color = "white";
     }
   });
 });
@@ -174,7 +178,6 @@ function handleThemeBtn() {
     document.querySelector('.resetCounter').style.backgroundColor = "#ced4e2"
     document.querySelector('.resetCounter').style.color = "#141516"
     document.querySelector('.info').style.backgroundColor = "#141516"
-    
   } else if (event.target.matches('.blue-btn')) {
     handleStyleColorChange()
     document.querySelector('.settings').style.backgroundColor = "#004291"
@@ -235,6 +238,16 @@ for (let i = 0; i < btnBorder.length; i++) {
 
 }
 
+function regexControl(event) {
+  const inputValue = event.target.value;
+  const regex = /^([1-9]\d*|0)$/;
+  if (!regex.test(inputValue)) { 
+    event.target.value = inputValue.replace(/[^\d]/g, '');
+  }
+}
+
+setLimit.addEventListener('input', regexControl);
+maximum.addEventListener('input', regexControl);
 
 // const colorButtons = {
 //   "black-btn": "#141516",
