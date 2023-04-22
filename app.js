@@ -44,7 +44,7 @@ function handleValueChange() {
 
 }
 
-function handleAvailableText () {
+function handleAvailableText() {
   if (currentNumber <= 0) {
     availableText.innerHTML = "LIMIT REACHED";
   } else {
@@ -52,9 +52,9 @@ function handleAvailableText () {
   }
 }
 
-setLimit.addEventListener("change", function(event) {
+setLimit.addEventListener("change", function (event) {
   handleValueChange()
-  handleAvailableText ()
+  handleAvailableText()
 })
 
 maximum.addEventListener("change", function (event) {
@@ -255,7 +255,7 @@ for (let i = 0; i < btnBorder.length; i++) {
 function regexControl(event) {
   const inputValue = event.target.value;
   const regex = /^([1-9]\d*|0)$/;
-  if (!regex.test(inputValue)) { 
+  if (!regex.test(inputValue)) {
     event.target.value = inputValue.replace(/[^\d]/g, '');
   }
 }
