@@ -155,57 +155,38 @@ function handleStyleColorChange() {
   }
 }
 
-function handleThemeBtn() {
-  if (event.target.matches('.black-btn')) {
-    handleStyleColorChange()
-    settingsSection.style.backgroundColor = "#141516"
-    document.body.style.backgroundColor = "#141516"
-    resetCounter.style.backgroundColor = "#141516"
-    info.style.backgroundColor = "#141516"
-  } else if (event.target.matches('.white-btn')) {
-    handleStyleColorChange()
-    document.body.style.backgroundColor = "#ced4e2"
-    document.querySelector(".settings-inner").style.color = "#141516"
-    settingsSection.style.backgroundColor = "#ced4e2"
-    resetCounter.style.backgroundColor = "#ced4e2"
-    resetCounter.style.color = "#141516"
-    info.style.backgroundColor = "#141516"
-  } else if (event.target.matches('.blue-btn')) {
-    handleStyleColorChange()
-    settingsSection.style.backgroundColor = "#004291"
-    document.body.style.backgroundColor = "#004291"
-    resetCounter.style.backgroundColor = "#004291"
-    info.style.backgroundColor = "#004291"
-  } else if (event.target.matches('.pink-btn')) {
-    handleStyleColorChange()
-    settingsSection.style.backgroundColor = "#ed1e78"
-    document.body.style.backgroundColor = "#ed1e78"
-    resetCounter.style.backgroundColor = "#ed1e78"
-    info.style.backgroundColor = "#ed1e78"
-  } else if (event.target.matches('.gray-btn')) {
-    handleStyleColorChange()
-    settingsSection.style.backgroundColor = "#607d8b"
-    document.body.style.backgroundColor = "#607d8b"
-    resetCounter.style.backgroundColor = "#607d8b"
-    info.style.backgroundColor = "#607d8b"
-  } else if (event.target.matches('.purple-btn')) {
-    handleStyleColorChange()
-    settingsSection.style.backgroundColor = "#a701a6"
-    document.body.style.backgroundColor = "#a701a6"
-    resetCounter.style.backgroundColor = "#a701a6"
-    info.style.backgroundColor = "#a701a6"
-  } else if (event.target.matches('.green-btn')) {
-    handleStyleColorChange()
-    settingsSection.style.backgroundColor = "#01ad98"
-    document.body.style.backgroundColor = "#01ad98"
-    resetCounter.style.backgroundColor = "#01ad98"
-    info.style.backgroundColor = "#01ad98"
-  } else if (event.target.matches('.yellow-btn')) {
-    handleStyleColorChange()
-    settingsSection.style.backgroundColor = "#ffac04"
-    document.body.style.backgroundColor = "#ffac04"
-    resetCounter.style.backgroundColor = "#ffac04"
-    info.style.backgroundColor = "#ffac04"
+function handleThemeBtn(event) {
+  handleStyleColorChange();
+
+  const themeColors = {
+    'black-btn': '#141516',
+    'white-btn': '#ced4e2',
+    'blue-btn': '#004291',
+    'pink-btn': '#ed1e78',
+    'gray-btn': '#607d8b',
+    'purple-btn': '#a701a6',
+    'green-btn': '#01ad98',
+    'yellow-btn': '#ffac04'
+  };
+
+  const btnClass = event.classList;
+
+let key = '';
+for (let i = 0; i < btnClass.length; i++) {
+  if (themeColors.hasOwnProperty(btnClass[i])) { 
+    key = btnClass[i];
+    break; 
+  }
+}
+
+  settingsSection.style.backgroundColor = themeColors[key];
+  document.body.style.backgroundColor = themeColors[key];
+  resetCounter.style.backgroundColor = themeColors[key];
+  info.style.backgroundColor = themeColors[key];
+
+  if (btnClass === 'white-btn') {
+    document.querySelector(".settings-inner").style.color = '#141516';
+    resetCounter.style.color = '#141516';
   }
 }
 
@@ -240,15 +221,3 @@ function regexControl(event) {
 setLimit.addEventListener('input', regexControl);
 maximum.addEventListener('input', regexControl);
 
-// const colorButtons = {
-//   "black-btn": "#141516",
-//   "white-btn": "#ced4e2",
-//   "blue-btn": "#004291",
-//   "pink-btn": "#ed1e78",
-//   "gray-btn": "#607d8b",
-//   "purple-btn": "#a701a6",
-//   "green-btn": "#01ad98",
-//   "yellow-btn": "#ffac04",
-// }
-
-// colorButtons["yellow.btn"] 
