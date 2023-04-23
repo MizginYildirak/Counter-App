@@ -61,6 +61,35 @@ function handleValueChange() {
   availableNumber.innerHTML = currentNumber;
 }
 
+function resetScreen() {
+  resetHidden.style.display = "none";
+  count = 0;
+  counter.innerHTML = count;
+  setLimit.value = "0";
+  maximum.value = "0";
+  currentNumber = 0;
+  availableNumber.innerHTML = "0";
+  availableText.innerText = "AVAILABLE"
+  decrementBtnVisibility();
+}
+
+function cancelScreen() {
+  resetHidden.style.display = "none";
+  settingsHidden.style.display = "none"; //buraya bak
+}
+
+function setVisibilityOfPageTop() {
+  settingsHidden.style.display = "none";
+  resetHidden.style.display = "none";
+  infoHidden.style.display = "none";
+}
+
+function changeStyle(color) {
+  document.querySelectorAll(".symbol").forEach((item) => {
+    item.style.borderColor = color;
+  })
+}
+
 //refactor
 function handleAvailableText() {
   (currentNumber <= 0) ? availableText.innerHTML = "LIMIT REACHED" : availableText.innerHTML = "AVAILABLE";
@@ -85,7 +114,6 @@ increment.addEventListener("click", () => {
   handleAvailableText()
   decrementBtnVisibility();
 });
-
 
 decrement.addEventListener("click", function () {
   count -= 1;
@@ -117,34 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function resetScreen() {
-  resetHidden.style.display = "none";
-  count = 0;
-  counter.innerHTML = count;
-  setLimit.value = "0";
-  maximum.value = "0";
-  currentNumber = 0;
-  availableNumber.innerHTML = "0";
-  availableText.innerText = "AVAILABLE"
-  decrementBtnVisibility();
-}
 
-function cancelScreen() {
-  resetHidden.style.display = "none";
-  settingsHidden.style.display = "none"; //buraya bak
-}
-
-function setVisibilityOfPageTop() {
-  settingsHidden.style.display = "none";
-  resetHidden.style.display = "none";
-  infoHidden.style.display = "none";
-}
-
-function changeStyle(color) {
-  document.querySelectorAll(".symbol").forEach((item) => {
-    item.style.borderColor = color;
-  })
-}
 
 function handleStyleColorChange() {
   if (event.target.matches('.white-btn')) {
