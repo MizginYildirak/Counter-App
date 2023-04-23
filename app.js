@@ -1,7 +1,7 @@
 const counter = document.querySelector(".counter");
 const increment = document.querySelector(".increment");
 const decrement = document.querySelector(".decrement");
-const reset = document.querySelector(".reset");
+const resetBtn = document.querySelector(".reset-btn");
 const toggleSwitch = document.querySelector(".switch-toggle");
 const maximum = document.querySelector(".maximum");
 const setLimit = document.getElementById("set-limit");
@@ -15,7 +15,7 @@ const maximumInner = document.getElementById("maximum-inner")
 const restrictive = document.querySelector(".restrictive")
 const settingsHidden = document.querySelector(".settings-hidden")
 const resetHidden = document.querySelector(".reset-hidden")
-const resetCounter = document.querySelector(".reset-counter")
+const resetCounter = document.querySelector(".resetCounter")
 const infoHidden = document.querySelector(".info-hidden")
 const info = document.querySelector('.info')
 

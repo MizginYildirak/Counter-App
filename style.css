@@ -189,11 +189,19 @@ body {
   background-color: var(--color-green);
 }
 
-.yellow-btn {
+.yellow-btn{
   background-color: var(--color-yellow);
 }
 
-.btn-border {}
+.btn-border, .info-btn, .reset-btn, .settings-btn  {
+  transition: transform .4s;
+}
+
+.btn-border:hover, .info-btn:hover, .reset-btn:hover, .settings-btn:hover  {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2); 
+}
 
 .close-btn {
   font-size: 25px;
