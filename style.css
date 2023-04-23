@@ -135,8 +135,6 @@ body {
 
 
 
-
-
 .theme-btn {
   display: flex;
   justify-content: center;
@@ -198,7 +196,7 @@ body {
 .btn-border:hover, .info-btn:hover, .reset-btn:hover, .settings-btn:hover  {
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.3); 
+  transform: scale(1.2); 
 }
 
 .close-btn {
@@ -266,8 +264,9 @@ body {
 }
 
 .page-cover {
+
   display: flex;
-  justify-content: center;
+
   align-items: center;
   justify-content: space-between;
   flex: 3;
@@ -366,5 +365,15 @@ body {
 
   to {
     top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+.page-cover {
+  justify-content: center;
+}
+  .increment {
+    position: absolute;
+
   }
 }

@@ -1,7 +1,6 @@
 const counter = document.querySelector(".counter");
 const increment = document.querySelector(".increment");
 const decrement = document.querySelector(".decrement");
-const resetBtn = document.querySelector(".reset-btn");
 const toggleSwitch = document.querySelector(".switch-toggle");
 const maximum = document.querySelector(".maximum");
 const setLimit = document.getElementById("set-limit");
@@ -145,8 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-
 
 function handleStyleColorChange() {
   if (event.target.matches('.white-btn')) {
