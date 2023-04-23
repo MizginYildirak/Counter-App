@@ -76,6 +76,7 @@ function resetScreen() {
 function cancelScreen() {
   resetHidden.style.display = "none";
   settingsHidden.style.display = "none"; //buraya bak
+  infoHidden.style.display = "none";
 }
 
 function setVisibilityOfPageTop() {
