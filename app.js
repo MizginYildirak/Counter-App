@@ -1,38 +1,57 @@
-//variables
-
-let counter = document.querySelector(".counter");
+const counter = document.querySelector(".counter");
 const increment = document.querySelector(".increment");
 const decrement = document.querySelector(".decrement");
 const reset = document.querySelector(".reset");
 const toggleSwitch = document.querySelector(".switch-toggle");
-let maximum = document.querySelector(".maximum");
-let setLimit = document.getElementById("set-limit");
-let availableNumber = document.querySelector(".available-number")
+const maximum = document.querySelector(".maximum");
+const setLimit = document.getElementById("set-limit");
+const availableNumber = document.querySelector(".available-number")
 const btnBorder = document.getElementsByClassName("btn-border");
 const setCount = document.querySelector(".set-count");
 const availableText = document.querySelector(".available");
+const infoSectionElement = document.querySelector(".info-section")
+const settingsSection = document.querySelector(".settings")
+const maximumInner = document.getElementById("maximum-inner")
+const restrictive = document.querySelector(".restrictive")
+const settingsHidden = document.querySelector(".settings-hidden")
+const resetHidden = document.querySelector(".reset-hidden")
+const resetCounter = document.querySelector(".reset-counter")
+const infoHidden = document.querySelector(".info-hidden")
+const info = document.querySelector('.info')
 
-
-console.log(availableNumber)
 let count = 0;
 let currentNumber = 0;
-checkBtn();
 
-
-
-// Opening Page
+decrementBtnVisibility();
 
 setInterval(function () {
   document.querySelector(".opening").style.display = "none";
   document.querySelector(".main").style.display = "block";
 }, 3000);
 
-function checkBtn() {
-  if (count == 0) {
-    document.querySelector(".decrement").style.visibility = "hidden";
-  } else if (count > 0) {
-    document.querySelector(".decrement").style.visibility = "visible";
-  }
+function toggleMenuInfoSection(e) {
+  setVisibilityOfPageTop()
+  e.classList.toggle("info-active");
+  infoSectionElement.classList.toggle("info-active");
+  infoHidden.style.display = "block";
+}
+
+function toggleMenu(e) {
+  setVisibilityOfPageTop()
+  e.classList.toggle("active");
+  resetCounter.classList.toggle("active");
+  resetHidden.style.display = "block";
+}
+
+function toggleMenuSection(e) {
+  setVisibilityOfPageTop()
+  e.classList.toggle("styles-active");
+  settingsSection.classList.toggle("styles-active");
+  settingsHidden.style.display = "block";
+}
+
+function decrementBtnVisibility() {
+  (count <= 0) ? decrement.style.visibility = "hidden" : decrement.style.visibility = "visible";
 }
 
 function handleValueChange() {
@@ -40,100 +59,66 @@ function handleValueChange() {
   counter.innerHTML = count;
   currentNumber = Number(maximum.value) - count;
   availableNumber.innerHTML = currentNumber;
-
-
 }
 
+//refactor
 function handleAvailableText() {
-  if (currentNumber <= 0) {
-    availableText.innerHTML = "LIMIT REACHED";
-  } else {
-    availableText.innerHTML = "AVAILABLE";
-  }
+  (currentNumber <= 0) ? availableText.innerHTML = "LIMIT REACHED" : availableText.innerHTML = "AVAILABLE";
 }
 
-setLimit.addEventListener("change", function (event) {
+setLimit.addEventListener("change", event => {
   handleValueChange()
   handleAvailableText()
 })
 
-maximum.addEventListener("change", function (event) {
+maximum.addEventListener("change", event => {
   handleValueChange()
   handleAvailableText()
 })
 
-increment.addEventListener("click", function () {
+increment.addEventListener("click", () => {
   count += 1;
   counter.innerHTML = count;
-  checkBtn();
   currentNumber--
   availableNumber.innerHTML = currentNumber;
   setLimit.value++
   handleAvailableText()
+  decrementBtnVisibility();
 });
 
 
 decrement.addEventListener("click", function () {
   count -= 1;
   counter.innerHTML = count;
-  checkBtn();
   currentNumber++;
   availableNumber.innerHTML = currentNumber;
   handleAvailableText()
+  decrementBtnVisibility();
 });
 
+maximumInner.style.pointerEvents = "none";
+maximumInner.style.opacity = "0.2";
 
-function toggleMenuInfoSection(e) {
-  setVisibilityOfPageTop()
-  e.classList.toggle("info-active");
-  document.querySelector(".info").classList.toggle("info-active");
-  document.querySelector(".info-hidden").style.display = "block";
-}
+document.addEventListener('DOMContentLoaded', () => {
+  let checkbox = document.querySelector('.switch-toggle input[type="checkbox"]');
 
-
-function toggleMenu(e) {
-  setVisibilityOfPageTop()
-  e.classList.toggle("active");
-  document.querySelector(".resetCounter").classList.toggle("active");
-  document.querySelector(".reset-hidden").style.display = "block";
-}
-
-
-function toggleMenuSection(e) {
-  setVisibilityOfPageTop()
-  e.classList.toggle("styles-active");
-  document.querySelector(".settings").classList.toggle("styles-active");
-  document.querySelector(".settings-hidden").style.display = "block";
-}
-
-
-document.getElementById("maximum-inner").style.pointerEvents = "none";
-document.getElementById("maximum-inner").style.opacity = "0.2";
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  var checkbox = document.querySelector('.switch-toggle input[type="checkbox"]');
-
-  checkbox.addEventListener('change', function () {
+  checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
       // do this
-      document.getElementById("maximum-inner").style.pointerEvents = "auto";
-      document.getElementById("maximum-inner").style.opacity = "1";
-      document.querySelector(".restrictive").style.visibility = "visible"
+      maximumInner.style.pointerEvents = "auto";
+      maximumInner.style.opacity = "1";
+      restrictive.style.visibility = "visible"
     } else {
       // do that
-      document.getElementById("maximum-inner").style.pointerEvents = "none";
-      document.getElementById("maximum-inner").style.opacity = "0.2";
-      document.querySelector(".restrictive").style.visibility = "hidden"
+      maximumInner.style.pointerEvents = "none";
+      maximumInner.style.opacity = "0.2";
+      restrictive.style.visibility = "hidden"
     }
   });
 });
 
-
-
 function resetScreen() {
-  document.querySelector(".reset-hidden").style.display = "none";
+  resetHidden.style.display = "none";
   count = 0;
   counter.innerHTML = count;
   setLimit.value = "0";
@@ -141,31 +126,25 @@ function resetScreen() {
   currentNumber = 0;
   availableNumber.innerHTML = "0";
   availableText.innerText = "AVAILABLE"
-  checkBtn();
+  decrementBtnVisibility();
 }
 
-
 function cancelScreen() {
-  document.querySelector(".reset-hidden").style.display = "none";
-  document.querySelector(".settings-hidden").style.display = "none"; //buraya bak
+  resetHidden.style.display = "none";
+  settingsHidden.style.display = "none"; //buraya bak
 }
 
 function setVisibilityOfPageTop() {
-  document.querySelector(".settings-hidden").style.display = "none";
-  document.querySelector(".reset-hidden").style.display = "none";
-  document.querySelector(".info-hidden").style.display = "none";
+  settingsHidden.style.display = "none";
+  resetHidden.style.display = "none";
+  infoHidden.style.display = "none";
 }
-
-// Color change
 
 function changeStyle(color) {
   document.querySelectorAll(".symbol").forEach((item) => {
     item.style.borderColor = color;
   })
-
-
 }
-
 
 function handleStyleColorChange() {
   if (event.target.matches('.white-btn')) {
@@ -180,54 +159,54 @@ function handleStyleColorChange() {
 function handleThemeBtn() {
   if (event.target.matches('.black-btn')) {
     handleStyleColorChange()
-    document.querySelector('.settings').style.backgroundColor = "#141516"
+    settingsSection.style.backgroundColor = "#141516"
     document.body.style.backgroundColor = "#141516"
-    document.querySelector('.resetCounter').style.backgroundColor = "#141516"
-    document.querySelector('.info').style.backgroundColor = "#141516"
+    resetCounter.style.backgroundColor = "#141516"
+    info.style.backgroundColor = "#141516"
   } else if (event.target.matches('.white-btn')) {
     handleStyleColorChange()
     document.body.style.backgroundColor = "#ced4e2"
     document.querySelector(".settings-inner").style.color = "#141516"
-    document.querySelector('.settings').style.backgroundColor = "#ced4e2"
-    document.querySelector('.resetCounter').style.backgroundColor = "#ced4e2"
-    document.querySelector('.resetCounter').style.color = "#141516"
-    document.querySelector('.info').style.backgroundColor = "#141516"
+    settingsSection.style.backgroundColor = "#ced4e2"
+    resetCounter.style.backgroundColor = "#ced4e2"
+    resetCounter.style.color = "#141516"
+    info.style.backgroundColor = "#141516"
   } else if (event.target.matches('.blue-btn')) {
     handleStyleColorChange()
-    document.querySelector('.settings').style.backgroundColor = "#004291"
+    settingsSection.style.backgroundColor = "#004291"
     document.body.style.backgroundColor = "#004291"
-    document.querySelector('.resetCounter').style.backgroundColor = "#004291"
-    document.querySelector('.info').style.backgroundColor = "#004291"
+    resetCounter.style.backgroundColor = "#004291"
+    info.style.backgroundColor = "#004291"
   } else if (event.target.matches('.pink-btn')) {
     handleStyleColorChange()
-    document.querySelector('.settings').style.backgroundColor = "#ed1e78"
+    settingsSection.style.backgroundColor = "#ed1e78"
     document.body.style.backgroundColor = "#ed1e78"
-    document.querySelector('.resetCounter').style.backgroundColor = "#ed1e78"
-    document.querySelector('.info').style.backgroundColor = "#ed1e78"
+    resetCounter.style.backgroundColor = "#ed1e78"
+    info.style.backgroundColor = "#ed1e78"
   } else if (event.target.matches('.gray-btn')) {
     handleStyleColorChange()
-    document.querySelector('.settings').style.backgroundColor = "#607d8b"
+    settingsSection.style.backgroundColor = "#607d8b"
     document.body.style.backgroundColor = "#607d8b"
-    document.querySelector('.resetCounter').style.backgroundColor = "#607d8b"
-    document.querySelector('.info').style.backgroundColor = "#607d8b"
+    resetCounter.style.backgroundColor = "#607d8b"
+    info.style.backgroundColor = "#607d8b"
   } else if (event.target.matches('.purple-btn')) {
     handleStyleColorChange()
-    document.querySelector('.settings').style.backgroundColor = "#a701a6"
+    settingsSection.style.backgroundColor = "#a701a6"
     document.body.style.backgroundColor = "#a701a6"
-    document.querySelector('.resetCounter').style.backgroundColor = "#a701a6"
-    document.querySelector('.info').style.backgroundColor = "#a701a6"
+    resetCounter.style.backgroundColor = "#a701a6"
+    info.style.backgroundColor = "#a701a6"
   } else if (event.target.matches('.green-btn')) {
     handleStyleColorChange()
-    document.querySelector('.settings').style.backgroundColor = "#01ad98"
+    settingsSection.style.backgroundColor = "#01ad98"
     document.body.style.backgroundColor = "#01ad98"
-    document.querySelector('.resetCounter').style.backgroundColor = "#01ad98"
-    document.querySelector('.info').style.backgroundColor = "#01ad98"
+    resetCounter.style.backgroundColor = "#01ad98"
+    info.style.backgroundColor = "#01ad98"
   } else if (event.target.matches('.yellow-btn')) {
     handleStyleColorChange()
-    document.querySelector('.settings').style.backgroundColor = "#ffac04"
+    settingsSection.style.backgroundColor = "#ffac04"
     document.body.style.backgroundColor = "#ffac04"
-    document.querySelector('.resetCounter').style.backgroundColor = "#ffac04"
-    document.querySelector('.info').style.backgroundColor = "#ffac04"
+    resetCounter.style.backgroundColor = "#ffac04"
+    info.style.backgroundColor = "#ffac04"
   }
 }
 
@@ -244,12 +223,11 @@ for (let i = 0; i < btnBorder.length; i++) {
     this.style.border = "2px solid #fff";
 
     if (event.target.matches('.white-btn')) {
-      document.querySelector(".settings").style.color = "#141516"
+      settingsSection.style.color = "#141516"
     } else if (!event.target.matches('.white-btn')) {
-      document.querySelector(".settings").style.color = "#ced4e2"
+      settingsSection.style.color = "#ced4e2"
     }
   });
-
 }
 
 function regexControl(event) {

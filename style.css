@@ -52,7 +52,7 @@ body {
 
 .resetCounter,
 .settings,
-.info
+.info-section
 {
   display: flex;
   justify-content: center;
