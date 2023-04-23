@@ -16,7 +16,6 @@ const settingsHidden = document.querySelector(".settings-hidden")
 const resetHidden = document.querySelector(".reset-hidden")
 const resetCounter = document.querySelector(".resetCounter")
 const infoHidden = document.querySelector(".info-hidden")
-const info = document.querySelector('.info')
 
 let count = 0;
 let currentNumber = 0;
@@ -132,12 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
-      // do this
       maximumInner.style.pointerEvents = "auto";
       maximumInner.style.opacity = "1";
       restrictive.style.visibility = "visible"
     } else {
-      // do that
       maximumInner.style.pointerEvents = "none";
       maximumInner.style.opacity = "0.2";
       restrictive.style.visibility = "hidden"
@@ -149,6 +146,8 @@ function handleStyleColorChange() {
   if (event.target.matches('.white-btn')) {
     document.body.style.color = "#141516"
     changeStyle("#141516");
+    document.querySelector(".approve-btn").style.color = '#141516';
+    document.querySelector(".cancel-btn").style.color = '#141516';
   } else {
     document.body.style.color = "#ced4e2"
     changeStyle("#ced4e2");
@@ -171,23 +170,26 @@ function handleThemeBtn(event) {
 
   const btnClass = event.classList;
 
-let key = '';
-for (let i = 0; i < btnClass.length; i++) {
-  if (themeColors.hasOwnProperty(btnClass[i])) { 
-    key = btnClass[i];
-    break; 
+  let key = '';
+
+  for (let i = 0; i < btnClass.length; i++) {
+    if (themeColors.hasOwnProperty(btnClass[i])) {
+      key = btnClass[i];
+      break;
+    }
   }
-}
 
   settingsSection.style.backgroundColor = themeColors[key];
   document.body.style.backgroundColor = themeColors[key];
   resetCounter.style.backgroundColor = themeColors[key];
-  info.style.backgroundColor = themeColors[key];
+  infoSectionElement.style.backgroundColor = themeColors[key];
+
 
   if (btnClass === 'white-btn') {
     document.querySelector(".settings-inner").style.color = '#141516';
     resetCounter.style.color = '#141516';
   }
+  
 }
 
 // Add event listener to each button
