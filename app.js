@@ -72,15 +72,17 @@ function resetScreen() {
 }
 
 function cancelScreen() {
-  resetHidden.style.display = "none";
-  settingsHidden.style.display = "none"; //buraya bak
-  infoHidden.style.display = "none";
+  const cancelBtn = [resetHidden, settingsHidden, infoHidden]
+  for(const item of cancelBtn) {
+    item.style.display = "none"
+  }
 }
 
 function setVisibilityOfPageTop() {
-  settingsHidden.style.display = "none";
-  resetHidden.style.display = "none";
-  infoHidden.style.display = "none";
+  const cancelBtn = [resetHidden, settingsHidden, infoHidden]
+  for(const item of cancelBtn) {
+    item.style.display = "none"
+  }
 }
 
 function changeStyle(color) {
@@ -89,7 +91,6 @@ function changeStyle(color) {
   })
 }
 
-//refactor
 function handleAvailableText() {
   (currentNumber <= 0) ? availableText.innerHTML = "LIMIT REACHED" : availableText.innerHTML = "AVAILABLE";
 }
