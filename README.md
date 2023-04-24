@@ -9,7 +9,6 @@ Links
 My process
 Built with
 What I learned
-Continued development
 Useful resources
 Author
 
@@ -53,6 +52,7 @@ To see how you can add code snippets, see below:
 <h1>Some JS code I'm proud of</h1>
 
 // Add event listener to each button
+
 for (let i = 0; i < btnBorder.length; i++) {
   btnBorder[i].addEventListener("click", function () {
 
@@ -80,6 +80,8 @@ for (let i = 0; i < btnBorder.length; i++) {
 Useful resources
 W3 Schoold - This helped me for basics of website paradigm. I really liked this pattern and will use it going forward.
 MDN - This is an amazing document which helped me finally understand deep sides of web development. I'd recommend it to anyone still learning these concepts.
+
 Original Website - https://simplecounter.app
+
 Author 
 Author - [Mizgin]
