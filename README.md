@@ -1,4 +1,4 @@
-<h1>Counter App</>
+<h1>Counter App</h1>
   
 This is a clone Counter-App website.
 
