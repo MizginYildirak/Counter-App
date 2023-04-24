@@ -9,9 +9,9 @@ SimpleCounter
 
 Project Skeleton
 
-|----app.js
-|----style.css
 |----index.html
+|----style.css
+|----app.js
 
 Links [live site URL here: (https://counter-app-xi-five.vercel.app)]
 
@@ -32,7 +32,7 @@ Styled Components - For styles
 What I learned I learned how to use DOM manipulation , javascript DOM manipulation, @keyframes, html elements and many more.
 
 To see how you can add code snippets, see below:
-
+```javascript
 Some JS code I'm proud of
 // Add event listener to each button 
 for (let i = 0; i < btnBorder.length; i++) { btnBorder[i].addEventListener("click", function () {
