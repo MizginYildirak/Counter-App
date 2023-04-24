@@ -50,7 +50,6 @@ I learned how to use DOM manipulation , javascript DOM manipulation, @keyframes,
 To see how you can add code snippets, see below:
 
 <h1>Some JS code I'm proud of</h1>
-```js
 for (let i = 0; i < btnBorder.length; i++) {
   btnBorder[i].addEventListener("click", function () {
     for (let j = 0; j < btnBorder.length; j++) {
@@ -71,7 +70,6 @@ for (let i = 0; i < btnBorder.length; i++) {
     }
   });
 }
-```
 
 Useful resources
 W3 Schoold - This helped me for basics of website paradigm. I really liked this pattern and will use it going forward.
