@@ -54,7 +54,8 @@ if (event.target.matches('.white-btn')) {
   document.querySelector(".cancel-btn").style.color = '#ced4e2'
 }
 })
-}```
+}
+```
 
 Useful resources W3 Schoold - This helped me for basics of website paradigm. I really liked this pattern and will use it going forward. MDN - This is an amazing document which helped me finally understand deep sides of web development. I'd recommend it to anyone still learning these concepts.
 
