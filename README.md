@@ -1,4 +1,5 @@
-Counter-App
+<h1>Counter App</>
+  
 This is a clone Counter-App website.
 
 Table of contents 
