@@ -50,8 +50,7 @@ body {
 
 .resetCounter,
 .settings,
-.info-section
-{
+.info-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,7 +64,8 @@ body {
 }
 
 
-.settings-inner, .info-inner {
+.settings-inner,
+.info-inner {
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -185,18 +185,26 @@ body {
   background-color: var(--color-green);
 }
 
-.yellow-btn{
+.yellow-btn {
   background-color: var(--color-yellow);
 }
 
-.btn-border, .info-btn, .reset-btn, .settings-btn  {
+.btn-border,
+.info-btn,
+.reset-btn,
+.settings-btn {
   transition: transform .4s;
 }
 
-.btn-border:hover, .info-btn:hover, .reset-btn:hover, .settings-btn:hover  {
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.2); 
+.btn-border:hover,
+.info-btn:hover,
+.reset-btn:hover,
+.settings-btn:hover {
+  -ms-transform: scale(1.5);
+  /* IE 9 */
+  -webkit-transform: scale(1.5);
+  /* Safari 3-8 */
+  transform: scale(1.2);
 }
 
 .close-btn {
@@ -227,8 +235,6 @@ body {
 .cancel-btn {
   cursor: pointer;
 }
-
-
 
 .main {
   display: none;
@@ -266,7 +272,6 @@ body {
 .page-cover {
 
   display: flex;
-
   align-items: center;
   justify-content: space-between;
   flex: 3;
@@ -369,9 +374,10 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-.page-cover {
-  justify-content: center;
-}
+  .page-cover {
+    justify-content: center;
+  }
+
   .increment {
     position: absolute;
 

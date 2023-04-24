@@ -73,14 +73,14 @@ function resetScreen() {
 
 function cancelScreen() {
   const cancelBtn = [resetHidden, settingsHidden, infoHidden]
-  for(const item of cancelBtn) {
+  for (const item of cancelBtn) {
     item.style.display = "none"
   }
 }
 
 function setVisibilityOfPageTop() {
   const cancelBtn = [resetHidden, settingsHidden, infoHidden]
-  for(const item of cancelBtn) {
+  for (const item of cancelBtn) {
     item.style.display = "none"
   }
 }
@@ -143,6 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
 function handleStyleColorChange() {
   if (event.target.matches('.white-btn')) {
     document.body.style.color = "#141516"
@@ -190,8 +192,10 @@ function handleThemeBtn(event) {
     document.querySelector(".settings-inner").style.color = '#141516';
     resetCounter.style.color = '#141516';
   }
-  
+
 }
+
+document.querySelector(".black-btn").style.border = "2px solid #fff";
 
 // Add event listener to each button
 for (let i = 0; i < btnBorder.length; i++) {
@@ -207,8 +211,12 @@ for (let i = 0; i < btnBorder.length; i++) {
 
     if (event.target.matches('.white-btn')) {
       settingsSection.style.color = "#141516"
+      resetCounter.style.color = "#141516"
     } else if (!event.target.matches('.white-btn')) {
       settingsSection.style.color = "#ced4e2"
+      resetCounter.style.color = "#ced4e2"
+      document.querySelector(".approve-btn").style.color = '#ced4e2';
+      document.querySelector(".cancel-btn").style.color = '#ced4e2';
     }
   });
 }
