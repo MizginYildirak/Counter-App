@@ -1,21 +1,40 @@
 Counter-App
 This is a clone Counter-App website.
 
-Table of contents Overview Screenshot Project Skeleton Links My process Built with What I learned Useful resources Author
+Table of contents 
+Overview 
+Screenshot 
+Project 
+Skeleton 
+Links 
+My process 
+Built with 
+What I learned 
+Useful resources 
+Author
 
-Overview This is a simple tool for counting things and keeping truck of numbers.
+Overview 
 
-SimpleCounter
+This is a simple tool for counting things and keeping truck of numbers.
+
+
+![SimpleCounter](https://www.linkpicture.com/q/Ekran-Resmi-2023-04-24-19.03.44.png)
 
 Project Skeleton
 
 |----index.html
+
 |----style.css
+
 |----app.js
 
-Links [live site URL here: (https://counter-app-xi-five.vercel.app)]
+Links 
 
-My process Built with Semantic HTML5 markup
+[live site URL here: (https://counter-app-xi-five.vercel.app)]
+
+My process 
+
+Built with Semantic HTML5 markup
 
 CSS custom properties
 
