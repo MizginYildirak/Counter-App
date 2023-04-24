@@ -31,7 +31,7 @@ Project Skeleton
 
 ## Links 
 
-- live site URL here: (https://counter-app-xi-five.vercel.app)
+- live site URL here: https://counter-app-xi-five.vercel.app
 
 ## My process 
 
