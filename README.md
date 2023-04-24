@@ -32,8 +32,9 @@ Styled Components - For styles
 What I learned I learned how to use DOM manipulation , javascript DOM manipulation, @keyframes, html elements and many more.
 
 To see how you can add code snippets, see below:
-```javascript
+
 Some JS code I'm proud of
+```javascript
 // Add event listener to each button 
 for (let i = 0; i < btnBorder.length; i++) { btnBorder[i].addEventListener("click", function () {
 for (let j = 0; j < btnBorder.length; j++) {
@@ -53,7 +54,7 @@ if (event.target.matches('.white-btn')) {
   document.querySelector(".approve-btn").style.color = '#ced4e2';
   document.querySelector(".cancel-btn").style.color = '#ced4e2';
 }
-}); }
+}); }```
 
 Useful resources W3 Schoold - This helped me for basics of website paradigm. I really liked this pattern and will use it going forward. MDN - This is an amazing document which helped me finally understand deep sides of web development. I'd recommend it to anyone still learning these concepts.
 
