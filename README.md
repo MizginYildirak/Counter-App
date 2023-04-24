@@ -1,6 +1,6 @@
 <h1>Counter App</h1>
   
-- This is a clone Counter-App website.
+ This is a clone Counter-App website.
 
 - Table of contents 
 - Overview 
@@ -79,10 +79,10 @@ if (event.target.matches('.white-btn')) {
 
 ```
 
-## Useful resources W3 Schoold 
+## Useful resources 
 
-- This helped me for basics of website paradigm. I really liked this pattern and will use it going forward. MDN 
-- This is an amazing document which helped me finally understand deep sides of web development. I'd recommend it to anyone still learning these concepts.
+- W3 School This helped me for basics of website paradigm. I really liked this pattern and will use it going forward. 
+- MDN  This is an amazing document which helped me finally understand deep sides of web development. I'd recommend it to anyone still learning these concepts.
 
 ## Original Website - https://simplecounter.app
 
