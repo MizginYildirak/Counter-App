@@ -38,11 +38,11 @@ Some JS code I'm proud of
 for (let i = 0; i < btnBorder.length; i++) { btnBorder[i].addEventListener("click", function () {
 for (let j = 0; j < btnBorder.length; j++) {
   if (btnBorder[j] !== this) {
-    btnBorder[j].style.border = "none";
+    btnBorder[j].style.border = "none"
   }
 }
 // Change border style of clicked button
-this.style.border = "2px solid #fff";
+this.style.border = "2px solid #fff"
 
 if (event.target.matches('.white-btn')) {
   settingsSection.style.color = "#141516"
@@ -50,10 +50,11 @@ if (event.target.matches('.white-btn')) {
 } else if (!event.target.matches('.white-btn')) {
   settingsSection.style.color = "#ced4e2"
   resetCounter.style.color = "#ced4e2"
-  document.querySelector(".approve-btn").style.color = '#ced4e2';
-  document.querySelector(".cancel-btn").style.color = '#ced4e2';
+  document.querySelector(".approve-btn").style.color = '#ced4e2'
+  document.querySelector(".cancel-btn").style.color = '#ced4e2'
 }
-}); }```
+})
+}```
 
 Useful resources W3 Schoold - This helped me for basics of website paradigm. I really liked this pattern and will use it going forward. MDN - This is an amazing document which helped me finally understand deep sides of web development. I'd recommend it to anyone still learning these concepts.
 
