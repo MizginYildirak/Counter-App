@@ -51,11 +51,8 @@ To see how you can add code snippets, see below:
 
 <h1>Some JS code I'm proud of</h1>
 
-// Add event listener to each button
-
 for (let i = 0; i < btnBorder.length; i++) {
   btnBorder[i].addEventListener("click", function () {
-
     for (let j = 0; j < btnBorder.length; j++) {
       if (btnBorder[j] !== this) {
         btnBorder[j].style.border = "none";
@@ -63,7 +60,6 @@ for (let i = 0; i < btnBorder.length; i++) {
     }
     // Change border style of clicked button
     this.style.border = "2px solid #fff";
-
     if (event.target.matches('.white-btn')) {
       settingsSection.style.color = "#141516"
       resetCounter.style.color = "#141516"
