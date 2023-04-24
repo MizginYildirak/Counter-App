@@ -34,8 +34,7 @@ What I learned I learned how to use DOM manipulation , javascript DOM manipulati
 To see how you can add code snippets, see below:
 
 Some JS code I'm proud of
-```javascript
-// Add event listener to each button 
+```javascript// Add event listener to each button 
 for (let i = 0; i < btnBorder.length; i++) { btnBorder[i].addEventListener("click", function () {
 for (let j = 0; j < btnBorder.length; j++) {
   if (btnBorder[j] !== this) {
