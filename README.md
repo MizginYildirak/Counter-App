@@ -1,18 +1,18 @@
 <h1>Counter App</h1>
   
-This is a clone Counter-App website.
+- This is a clone Counter-App website.
 
-Table of contents 
-Overview 
-Screenshot 
-Project 
-Skeleton 
-Links 
-My process 
-Built with 
-What I learned 
-Useful resources 
-Author
+- Table of contents 
+- Overview 
+- Screenshot 
+- Project 
+- Skeleton 
+- Links 
+- My process 
+- Built with 
+- What I learned 
+- Useful resources 
+- Author
 
 ## Overview 
 
@@ -37,17 +37,17 @@ Project Skeleton
 
 - Built with Semantic HTML5 markup
 
-CSS custom properties
+- CSS custom properties
 
-Flexbox
+- Flexbox
 
-JavaScript HTML DOM
+- JavaScript HTML DOM
 
-Google Specific Fonts
+- Google Specific Fonts
 
-Mobile-first workflow
+- Mobile-first workflow
 
-Styled Components - For styles
+- Styled Components - For styles
 
 ## What I learned 
 
